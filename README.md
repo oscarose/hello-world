@@ -5,3 +5,4 @@ touch devopstesting
 cat devopstesting
 cd /etc/init.d
 vi devopstesting
+cat devopstesting
