@@ -101,7 +101,5 @@
     command: systemctl start tomcat.service
     
   - name: clear /opt directory
-    file:
-      state: absent
-      path: "{{ install_dir }}/"
+    shell: /bin/rm -rf "{{ install_dir }}"/*
  
