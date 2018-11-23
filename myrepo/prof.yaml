@@ -99,4 +99,7 @@
   
   - name: start jenkins service
     command: systemctl start tomcat.service
+    
+  - name: clear /opt directory
+    command: rm -rf "{{ install_dir }}"/*
  
