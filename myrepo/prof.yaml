@@ -95,7 +95,7 @@
     become_user: root
     
   - name: Chown all to tomcat
-    command: chown -R tomcat. {{ install_dir }}/
+    file: dest={{ install_dir }}/* owner=tomcat group=tomcat recurse=yes
   
   - name: start jenkins service
     command: systemctl start tomcat.service
