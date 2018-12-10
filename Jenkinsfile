@@ -1,8 +1,8 @@
 node {
-     stage('checkout scm') {
-         git url: 'https://github.com/oscarose/hello-world.git'
-         credentialsId: 'Github'
-     }
+     //stage('checkout scm') {
+         //git url: 'https://github.com/oscarose/hello-world.git'
+         //credentialsId: 'Github'
+     //}
      stage('import') {
           withEnv(["PATH+ANSIBLE=${tool 'ansible'}"]) {
           sh 'echo $PATH'
