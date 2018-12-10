@@ -3,7 +3,7 @@ node {
          //git url: 'https://github.com/oscarose/hello-world.git'
          //credentialsId: 'Github'
      //}
-     stage('import') {
+     stage('javadeployment') {
           withEnv(["PATH+ANSIBLE=${tool 'ansible'}"]) {
           sh 'echo $PATH'
             sh 'ls -altr'
