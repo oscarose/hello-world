@@ -15,6 +15,22 @@ node {
         password(name: 'artifactory_user', defaultValue: '', description: 'artifact user')
         password(name: 'artifactory_password', defaultValue: '', description: 'artifacts pass')   
      }
+     stage('download file from artifactory') {
+          steps {
+               def server = Artifactory.newServer url: 'http://18.208.182.9:8081/artifactory', credentialsId: 'artifact'
+               def downloadSpecs = """{
+               "files":[
+               {
+                 "pattern":"CD-MY-STAGE/apache-tomcat-8.5.37.tar.gz",
+                 "pattern":"CD-MY-STAGE/jdk-8u202-linux-x64.tar.gz",
+                 "pattern":"CD-MY-STAGE/jenkins.war",
+                 "pattern":"CD-MY-STAGE/tomcat",
+                 "target":"/opt"
+                }
+                ]
+               }"""
+          }
+     }
      stage('javadeployment') {
           //withEnv(["PATH+ANSIBLE=${tool 'ansible'}"]) {
           sh ''' #!/bin/bash +x
