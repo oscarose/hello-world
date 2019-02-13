@@ -16,7 +16,7 @@ node {
         password(name: 'artifactory_password', defaultValue: '', description: 'artifacts pass')   
      }
      stage('download file from artifactory') {
-          steps {
+          //steps {
                def server = Artifactory.newServer url: 'http://18.208.182.9:8081/artifactory', credentialsId: 'artifact'
                def downloadSpecs = """{
                "files":[
@@ -29,7 +29,7 @@ node {
                 }
                 ]
                }"""
-          }
+          //}
      }
      stage('javadeployment') {
           //withEnv(["PATH+ANSIBLE=${tool 'ansible'}"]) {
