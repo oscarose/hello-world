@@ -7,7 +7,7 @@
   tasks:
   - name: Get Artifacts
     get_url:
-      url: http://18.208.182.9:8081/artifactory/CD-MY-STAGE/{{ item }}
+      url: http://54.82.209.206:8081/artifactory/CD-MY-STAGE/{{ item }}
       #url_username: "{{ artifactory_user }}"
       #url_password: "{{ artifactory_password }}"
       dest: "{{ install_dir }}"
@@ -82,7 +82,7 @@
   
   - name: Get Artifacts
     get_url:
-      url: http://18.208.182.9:8081/artifactory/CD-MY-STAGE/{{ item }}
+      url: http://54.82.209.206:8081/artifactory/CD-MY-STAGE/{{ item }}
       #url_username: "{{ artifactory_user }}"
       #url_password: "{{ artifactory_password }}"
       dest: "{{ jenkins_dir }}"
